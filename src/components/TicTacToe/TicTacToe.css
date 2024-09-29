@@ -1,0 +1,156 @@
+.tictactoe-page {
+    background-color: #ffeb3b; /* Minion yellow */
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px; /* Limit max width for larger screens */
+    margin: 20px auto; /* Center the game */
+    color: #3f51b5; /* Minion blue */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Larger shadow for depth */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tictactoe-page h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3f51b5;
+}
+
+.tictactoe-page p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Board styling */
+.tictactoe-board {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.tictactoe-board-row {
+    display: flex;
+    justify-content: center;
+}
+
+/* Square styling */
+.tictactoe-square {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+    margin: 5px;
+    background-color: #fff;
+    color: #3f51b5; /* Minion blue */
+    border: 2px solid #3f51b5;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effect */
+.tictactoe-square:hover {
+    background-color: #ffb74d; /* Minion accent color */
+    transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Active state for square */
+.tictactoe-square:active {
+    background-color: #ff9800;
+}
+
+/* Winning line highlight */
+.winning {
+    background-color: #ffeb3b; /* Highlight color */
+    animation: glow 1s infinite alternate; /* Glow effect */
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b;
+    }
+    to {
+        box-shadow: 0 0 20px #ffc107, 0 0 30px #ffc107;
+    }
+}
+
+.tictactoe-page .winner-message {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #f44336; /* Red for winner announcement */
+}
+
+.reset-button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #3f51b5; /* Minion blue */
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for reset button */
+.reset-button:hover {
+    background-color: #283593; /* Darker blue on hover */
+    transform: translateY(-3px);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .tictactoe-page {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .tictactoe-square {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .tictactoe-page h2 {
+        font-size: 1.8rem;
+    }
+
+    .tictactoe-page p {
+        font-size: 1rem;
+    }
+
+    .reset-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Media query for very small screens (mobile) */
+@media (max-width: 480px) {
+    .tictactoe-page {
+        padding: 10px;
+    }
+
+    .tictactoe-square {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .tictactoe-page h2 {
+        font-size: 1.5rem;
+    }
+
+    .tictactoe-page p {
+        font-size: 0.9rem;
+    }
+
+    .reset-button {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+}
