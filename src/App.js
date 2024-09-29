@@ -6,6 +6,7 @@ import GuessTheNumber from './components/GuessTheNumber/GuessTheNumber';
 import TicTacToe from './components/TicTacToe/TicTacToe';
 import SnakeGame from './components/SnakeGame/SnakeGame';
 
+
 function App() {
   return (
     <Router>
