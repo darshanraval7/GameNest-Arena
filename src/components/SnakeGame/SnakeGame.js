@@ -1,18 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./SnakeGame.css"; // Use the same CSS style as other games
 
 const SnakeGame = () => {
   const [snake, setSnake] = useState([{ x: 10, y: 10 }]);
   const [food, setFood] = useState({ x: Math.floor(Math.random() * 20), y: Math.floor(Math.random() * 20) });
   const [direction, setDirection] = useState({ x: 0, y: 0 });
-  const [speed, setSpeed] = useState(200);
+  const [speed] = useState(200);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
-  
-  const canvasRef = useRef(null);
 
   // Move the snake
-  const moveSnake = () => {
+  const moveSnake = useCallback(() => {
     const newSnake = [...snake];
     const head = { x: newSnake[0].x + direction.x, y: newSnake[0].y + direction.y };
 
@@ -34,7 +32,7 @@ const SnakeGame = () => {
     }
 
     setSnake(newSnake);
-  };
+  }, [snake, direction, food, score]);
 
   // Check if snake collides with itself or walls
   const checkCollision = (head, body) => {
@@ -46,7 +44,7 @@ const SnakeGame = () => {
   };
 
   // Handle key input for direction change
-  const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback((e) => {
     switch (e.keyCode) {
       case 37: // Left
         if (direction.x !== 1) setDirection({ x: -1, y: 0 });
@@ -63,7 +61,7 @@ const SnakeGame = () => {
       default:
         break;
     }
-  };
+  }, [direction]);
 
   // Game loop
   useEffect(() => {
@@ -74,7 +72,7 @@ const SnakeGame = () => {
       clearInterval(gameInterval);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [snake, direction, gameOver]);
+  }, [moveSnake, handleKeyDown, gameOver, speed]);
 
   // Reset game
   const resetGame = () => {
