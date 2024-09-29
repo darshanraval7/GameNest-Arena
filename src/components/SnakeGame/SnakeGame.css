@@ -1,0 +1,81 @@
+/* Container for Snake Game */
+.snake-game-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Scoreboard styling */
+  .score-board {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Game board styling - responsive adjustments */
+  .game-board {
+    display: inline-block;
+    background-color: #f1f1f1;
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 10px;
+    /* Adjust size for mobile responsiveness */
+    width: 100%;
+    max-width: 400px; /* Set a maximum width */
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  /* Row styling */
+  .row {
+    display: flex;
+  }
+  
+  /* Individual cell styling */
+  .cell {
+    width: 5vw; /* Use viewport units to make it responsive */
+    height: 5vw; /* Match height to the width */
+    max-width: 20px; /* Set a maximum size */
+    max-height: 20px; /* Set a maximum size */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Snake block styling */
+  .snake {
+    background-color: #4CAF50; /* Snake color matching your theme */
+  }
+  
+  /* Food block styling */
+  .food {
+    background-color: #f44336; /* Food color matching your theme */
+  }
+  
+  /* Responsive button styling */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Make the game board responsive on mobile */
+  @media (max-width: 600px) {
+    .cell {
+      width: 7vw; /* Adjust cell size for smaller screens */
+      height: 7vw;
+    }
+  
+    .game-board {
+      padding: 5px; /* Adjust padding for smaller screens */
+      border: 1px solid #333;
+    }
+  }
+  

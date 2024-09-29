@@ -1,0 +1,233 @@
+/* General Styles */
+.homepage body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffdf0; /* Light Yellow Background */
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner Styles */
+.homepage .banner {
+  position: relative;
+  background-color: #f8d84e; /* Minion Yellow */
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom-left-radius: 100px; /* Curved Shape */
+  border-bottom-right-radius: 100px;
+  overflow: hidden;
+}
+
+.homepage .banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.homepage .banner-content {
+  position: relative;
+  z-index: 2;
+  color: #3f88cd;
+}
+
+.homepage .banner-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.homepage .banner-subtitle {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.homepage .banner-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #4c9cd1; /* Minion Blue */
+  color: white;
+  border-radius: 30px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.homepage .banner-btn:hover {
+  background-color: #f78f24; /* A fun contrasting color for hover */
+}
+
+/* Games Section */
+.homepage .games-section {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.homepage .games-section h2 {
+  font-size: 2rem; /* Larger heading on larger screens */
+}
+
+.homepage .game-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.homepage .game-card {
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  cursor: pointer;
+}
+
+.homepage .game-card:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.homepage .game-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.homepage .game-card img:hover {
+  transform: scale(1.1); /* Subtle zoom effect */
+}
+
+.homepage .game-card h4 {
+  margin: 20px 0;
+  color: #4c9cd1; /* Minion Blue */
+  font-size: 1.5rem;
+}
+
+/* Updated Total Game Plays Section */
+.homepage .total-plays {
+  text-align: center;
+  margin: 20px 0; /* Spacing around the total plays section */
+  font-size: 1.5rem; /* Font size */
+  color: #ffffff; /* White text for contrast */
+  background: #fad554;
+  padding: 15px; /* Padding for better appearance */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.homepage .total-plays:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Game Card Total Plays */
+.homepage .game-card p {
+  font-size: 1rem; /* Font size for total plays */
+  color: #ffffff; /* White color for better visibility */
+  padding: 10px 20px; /* Padding for spacing */
+  background-color: rgba(76, 156, 209, 0.8); /* Semi-transparent background */
+  border-radius: 15px; /* Rounded corners for total plays */
+  margin-top: 10px; /* Spacing above */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.homepage .game-card:hover p {
+  background-color: rgba(76, 156, 209, 1); /* Solid color on hover */
+}
+
+/* Minion Animation Styles */
+.homepage .minion-animation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.homepage .minion-animation img {
+  max-width: 100%; /* Ensures the image fits within the screen */
+  height: auto;    /* Maintains the aspect ratio */
+}
+
+/* Footer Styles */
+.homepage .footer {
+  background-color: #4c9cd1; /* Minion Blue */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.homepage .footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Footer Hyperlink Styles */
+.homepage .footer a {
+  color: #fff; /* White text for the link */
+  text-decoration: underline; /* Optional underline */
+}
+
+.homepage .footer a:hover {
+  color: #f78f24; /* Change link color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .homepage .banner {
+    height: 400px; /* Reduced height for mobile */
+  }
+
+  .homepage .banner-title {
+    font-size: 2.5rem; /* Smaller title */
+  }
+
+  .homepage .banner-subtitle {
+    font-size: 1rem; /* Smaller subtitle */
+  }
+
+  .homepage .banner-btn {
+    padding: 8px 20px; /* Smaller button padding */
+    font-size: 0.9rem; /* Smaller button text */
+  }
+
+  .homepage .games-section h2 {
+    font-size: 1.5rem; /* Smaller heading for mobile */
+  }
+
+  .homepage .game-card {
+    width: 90%; /* Full width for mobile */
+    max-width: 300px; /* Ensure a max width */
+    margin-bottom: 20px; /* Spacing between cards */
+  }
+
+  .homepage .game-card h4 {
+    font-size: 1.3rem; /* Smaller game card title */
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage .banner-title {
+    font-size: 2rem; /* Further reduced title */
+  }
+
+  .homepage .banner-subtitle {
+    font-size: 0.9rem; /* Further reduced subtitle */
+  }
+
+  .homepage .banner-btn {
+    font-size: 0.8rem; /* Smaller button text */
+  }
+
+  .homepage .game-card h4 {
+    font-size: 1.2rem; /* Smaller game card title */
+  }
+}
